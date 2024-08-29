@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet, Dimensions } from 'react-native'
+import RoootNavigator from './src/navigations/RootNavigator';
+import { OriginContextProvider,DestinationContextProvider } from './src/contexts/contexts';
+import Geolocation from 'react-native-geolocation-service';
 
-export default function App() {
+//navigator.geolocation = Geolocation;
+navigator.geolocation = require('react-native-geolocation-service');
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <DestinationContextProvider>
+    <OriginContextProvider>
+        <RoootNavigator />
+    </OriginContextProvider>
+   </DestinationContextProvider>
+    
   );
-}
+};
+
+
+export default App
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+container:{
+  flex:1
+}
+
+
+})

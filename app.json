@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "uberClone",
-    "slug": "uberClone",
+    "slug": "iride",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,16 +12,33 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier":"com.uberClone",
+      "config":{
+        "googleMapsApiKey":"AIzaSyDB9BAUZ2fAJWYWLGGW1T0Nb66q5Y_ym2E"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package":"com.uberClone",
+      "config":{
+        "googleMaps":{
+          "apiKey":"AIzaSyDB9BAUZ2fAJWYWLGGW1T0Nb66q5Y_ym2E"
+        },
+        "permissions":["ACCESS_COARSE_LOCATION","ACCESS_FINE_LOCATION","FOREGROUND_SERVICE"]
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8eddefdd-b293-4659-a83e-7635deb4fa53"
+      }
+    },
+    "owner": "raykum"
   }
 }
